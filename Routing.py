@@ -19,8 +19,13 @@ with open('wards_gdf.pkl', 'rb') as file:
 with open('ward_metaData.pkl', 'rb') as file:
     ward_metaData = pickle.load(file)
     
-with open('distance_matrix.pkl', 'rb') as file:
-    distance_matrix = pickle.load(file)
+try:
+    with open('distance_matrix.pkl', 'rb') as file:
+        distance_matrix = pickle.load(file)
+except pickle.UnpicklingError as e:
+    print(f"Failed to load distance_matrix.pkl: {e}")
+except Exception as e:
+    print(f"An error occurred: {e}")
 
 with open('wards.pkl', 'rb') as file:
     wards = pickle.load(file)    
