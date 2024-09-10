@@ -5,24 +5,19 @@ import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from math import radians, sin, cos, sqrt, atan2
 import math
-import pickle
 import joblib
 
-with open('metaData.pkl', 'rb') as file:
-    metaData = pickle.load(file)
+metaData=joblib.load('metaData.joblib')
     
-with open('tree.pkl', 'rb') as file:
-    tree = pickle.load(file)
+tree=joblib.load('tree.joblib')
 
 wards_gdf=joblib.load('wards_gdf.joblib')
 
-with open('ward_metaData.pkl', 'rb') as file:
-    ward_metaData = pickle.load(file)
+ward_metaData=joblib.load('ward_metaData.joblib')
     
 distance_matrix=joblib.load('distance_matrix.joblib')
 
-with open('wards.pkl', 'rb') as file:
-    wards = pickle.load(file)    
+wards=joblib.load('wards.joblib')
     
 def lat_lon_to_cartesian(lat, lon):
     # Convert latitude and longitude to radians
