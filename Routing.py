@@ -14,8 +14,7 @@ with open('metaData.pkl', 'rb') as file:
 with open('tree.pkl', 'rb') as file:
     tree = pickle.load(file)
 
-with open('wards_gdf.pkl', 'rb') as file:
-    wards_gdf = pickle.load(file)
+wards_gdf=joblib.load('wards_gdf.joblib')
 
 with open('ward_metaData.pkl', 'rb') as file:
     ward_metaData = pickle.load(file)
